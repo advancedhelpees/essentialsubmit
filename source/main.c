@@ -48,15 +48,15 @@ int main() {
 
 
     sheet = C2D_SpriteSheetLoad("romfs:/gfx/sprites.t3x");
-    C2D_Sprite nhlogo, soap;
-    C2D_SpriteFromSheet(&nhlogo, sheet, 0);
+    C2D_Sprite logo, soap;
+    C2D_SpriteFromSheet(&logo, sheet, 0);
     C2D_SpriteFromSheet(&soap, sheet, 1);
 
-    C2D_SpriteSetPos(&nhlogo, 10, 10);
-    C2D_SpriteSetScale(&nhlogo, 0.4, 0.4);
+    C2D_SpriteSetPos(&logo, 10, 10);
+    C2D_SpriteSetScale(&logo, 0.4, 0.4);
     C2D_SpriteSetPos(&soap, SCREEN_WIDTH_BOTTOM/2, SCREEN_HEIGHT/2);
     C2D_SpriteSetScale(&soap, 0.7, 0.7);
-    C2D_SpriteSetCenter(&nhlogo, 0.0, 0.0);
+    C2D_SpriteSetCenter(&logo, 0.0, 0.0);
     C2D_SpriteSetCenter(&soap, 0.5, 0.5);
 
     while (aptMainLoop()) {
@@ -71,10 +71,9 @@ int main() {
         C2D_SceneBegin(ctx.bottom);
         C2D_DrawSprite(&soap);
         C2D_SceneBegin(ctx.top);
-        drawText(115, 10, 0, 0.7, ctx.clrWhite, 0, "Nintendo Homebrew\nessential.exefs Submitter");
-        drawText(115, 55, 0, 0.4, ctx.clrWhite, 0, "made by gruetzig");
-        drawText(115, 230, 0, 0.35, ctx.clrWhite, 0, "do not open this link (explicit): https://youtu.be/-h0IpjnByfs");
-        C2D_DrawSprite(&nhlogo);
+        drawText(115, 10, 0, 0.7, ctx.clrWhite, 0, "Bluehax\nessential.exefs Submitter");
+        drawText(115, 55, 0, 0.4, ctx.clrWhite, 0, "made by gruetzig, modified by advancedhelpees");
+        C2D_DrawSprite(&logo);
 
         drawText(160,  80, 0, 0.4, ctx.clrWhite, 0, "SD essential.exefs serial:");
         drawText(160,  90, 0, 0.4, ctx.clrWhite, 0, "NAND essential.exefs serial:");
@@ -90,7 +89,7 @@ int main() {
                 drawText(20, 180, 0, 0.5, ctx.clrWhite, 0, "Your Discord name: %s", discordtag);
                 drawText(20, 210, 0, 0.5, ctx.clrWhite, 0, "Server address: %s", address);
                 if (strlen(address) > 0 && strlen(discordtag) > 0) {
-                    drawText(SCREEN_WIDTH_TOP/2, SCREEN_HEIGHT/2, 0, 0.7, ctx.clrWhite, C2D_AlignCenter, "Press on the soap to submit");
+                    drawText(SCREEN_WIDTH_TOP/2, SCREEN_HEIGHT/2, 0, 0.7, ctx.clrWhite, C2D_AlignCenter, "Press on the soap cat to submit");
                 } else {
                     drawText(SCREEN_WIDTH_TOP/2, SCREEN_HEIGHT/2+20, 0, 0.7, ctx.clrWhite, C2D_AlignCenter, "Press Y to enter your Discord tag");
                 }

@@ -22,7 +22,7 @@ Requires:
 - [bannertool](https://github.com/Epicpkmn11/bannertool)
 
 ```
-make SERVER_ADDRESS=https://server
+make SERVER_ADDRESS=https://server.xyz/submit
 ```
 
 # Hosting
@@ -36,9 +36,9 @@ app.py is a super small flask app that listens for post request on /submit and s
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
-pip install flask gunicorn flask_httpauth
+pip install -r requirements.txt
 ```
-To run the flask app, activate the venv and run:
+To run the flask app, activate the venv, open port 9023 in your firewall if needed, and run:
 ```bash
-gunicorn -w 1 app:app
+gunicorn -w 1 app:app -b 0.0.0.0:9023
 ```

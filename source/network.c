@@ -78,6 +78,7 @@ CURLcode submittourl(const char* url) {
     curl_easy_setopt(curl, CURLOPT_TIMEOUT_MS, 5000);
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0);
     curl_easy_setopt(curl, CURLOPT_URL, url);
+    curl_easy_setopt(curl, CURLOPT_PORT, 9023);
     return curl_easy_perform(curl);
 }
 
